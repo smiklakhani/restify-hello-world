@@ -6,8 +6,9 @@ restify-hello-world is a simple Restify service that exposes a GET helloWorld op
 Requires Node and NPM installed locally
 
 ## Installation
-- Install dependencies
+Execute the following command from the CLI to install dependencies:
 `npm install`
 
 ## Run
+Execute the following command from the CLI to begin the application:
 `npm start`
