@@ -5,8 +5,13 @@ const restify = require('restify');
 const server = restify.createServer();
 let greetingCount = 0;
 
+server.get('rest', (req, res, next) => {
+  res.send(200);
+  next();
+});
+
 // Define routes
-server.get('/hello/:name', (req, res, next) => {
+server.get('rest/hello/:name', (req, res, next) => {
   res.json({ message: `Hello ${req.params.name}. '/hello/:name' has been invoked ${++greetingCount} times since I was last started up.`});
   next();
 });
