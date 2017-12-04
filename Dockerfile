@@ -1,8 +1,10 @@
-# Docker file to test the hello-world example
+# Docker file for restify helloworld service 
 
-#FROM mhart/alpine-node:8
-FROM node:8-alpine
-#FROM node:8
+FROM centos:centos7
+
+RUN yum -y update; yum clean all
+RUN yum -y install epel-release; yum clean all
+RUN yum -y install nodejs npm; yum clean all
 
 RUN npm install pm2 -g
 
@@ -12,5 +14,4 @@ ADD . .
 RUN npm install
 
 EXPOSE 8080
-
-CMD [ "pm2-docker", "index.js" ]
+CMD ["pm2-docker", "index.js"]
