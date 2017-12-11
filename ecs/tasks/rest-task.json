@@ -1,0 +1,22 @@
+{
+    "containerDefinitions": [
+    {
+        "name": "rest", 
+        "image": "10.137.84.145:8082/resttest:v1", 
+        "cpu": 10, 
+        "memory": 256, 
+        "portMappings": [
+        {
+            "protocol": "tcp",
+            "containerPort": 8080,
+            "hostPort": 0
+        }
+        ],
+        "essential": true, 
+        "dockerLabels": {
+          "service": "rest"
+        }
+    }
+  ],
+  "family": "rest"
+}
