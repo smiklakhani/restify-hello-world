@@ -1,28 +1,29 @@
 {
   "cluster": "rest",
-  "serviceName": "rest", 
+  "serviceName": "rest",
   "taskDefinition": "rest",
   "loadBalancers": [
       {
           "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:615479239485:targetgroup/RestTG/f1c235a1d073bb0e",
-          "containerName": "rest", 
+          "containerName": "rest",
           "containerPort": 8080
       }
-  ], 
+  ],
   "role": "ess-ecr-role",
-  "desiredCount": 3, 
+  "desiredCount": "%DESIRED_COUNT%",
   "deploymentConfiguration": {
-      "maximumPercent": 200, 
+      "maximumPercent": 200,
       "minimumHealthyPercent": 50
-  }, 
+  },
   "placementStrategy": [
       {
-          "field": "attribute:ecs.availability-zone", 
+          "field": "attribute:ecs.availability-zone",
           "type": "spread"
-      }, 
+      },
       {
-          "field": "instanceId", 
+          "field": "instanceId",
           "type": "spread"
       }
   ]
 }
+

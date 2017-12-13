@@ -2,7 +2,7 @@
     "containerDefinitions": [
     {
         "name": "rest", 
-        "image": "10.137.84.145:8082/resttest:v1", 
+        "image": "10.137.84.145:8082/resttest:v_%BUILD_NUMBER%", 
         "cpu": 10, 
         "memory": 256, 
         "portMappings": [

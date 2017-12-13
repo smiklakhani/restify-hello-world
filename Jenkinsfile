@@ -25,4 +25,12 @@ node () {
              RestCustomImage.push("v_${env.BUILD_NUMBER}")
     }
 
+    stage ('Permission to execute') {
+        sh "chmod +x -R ${env.WORKSPACE}/../${env.JOB_NAME}/ecs/jenkins-post-build.sh"
+    }
+
+    stage ('Execute the script') {
+        sh "${env.WORKSPACE}/../${env.JOB_NAME}/ecs/jenkins-post-build.sh"
+    }
+
 }
