@@ -12,7 +12,7 @@ server.get('rest', (req, res, next) => {
 
 // Define routes
 server.get('rest/hello/:name', (req, res, next) => {
-  res.json({ message: `Hello ${req.params.name}. '/hello/:name' has been invoked ${++greetingCount} times since I was last started up.`});
+  res.json({ message: `Hello ${req.params.name}. '/hello/:name' has been invoked ${++greetingCount} times since I was last started up...`});
   next();
 });
 
