@@ -19,7 +19,7 @@ sed -i "s;%DESIRED_COUNT;${COUNT};g" ecs/services/rest-service.json
 #Register the task definition in the repository
 aws ecs register-task-definition --region ${REGION} --family ${TASK_FAMILY} --cli-input-json file://$TASK_FILE
 
-SERVICES=`aws ecs describe-services --services ${SERVICE_NAME} --cluster ${CLUSTER} --region ${REGION} | jq .failures[]`
+SERVICES=`aws ecs describe-services --services ${SERVICE_NAME} --cluster ${CLUSTER} --region ${REGION} | jq .services[].desiredCount`
 
 #Get latest revision
 TASK_REVISION=`aws ecs describe-task-definition --task-definition ${TASK_FAMILY} --region ${REGION} | jq .taskDefinition.revision`
