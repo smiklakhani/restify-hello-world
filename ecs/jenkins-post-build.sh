@@ -14,7 +14,7 @@ sed -e "s;%BUILD_NUMBER%;${VERSION};g" ecs/tasks/rest-task.json > $TASK_FILE
 
 # Replace the desired count
 SERVICE_FILE="ecs/services/rest-service.json"
-sed -i "s;%DESIRED_COUNT%;${COUNT};g" ecs/services/rest-service.json
+sed -i "s;%DESIRED_COUNT;${COUNT};g" ecs/services/rest-service.json
 
 #Register the task definition in the repository
 aws ecs register-task-definition --region ${REGION} --family ${TASK_FAMILY} --cli-input-json file://$TASK_FILE
