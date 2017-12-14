@@ -1,6 +1,7 @@
 # Docker file for restify helloworld service 
 
-FROM 10.137.84.145:8082/centos:centos7
+#FROM 10.137.84.145:8082/centos:centos7
+FROM nexus.hcqis.org:28443/centos:centos7
 
 RUN yum -y update; yum clean all
 RUN yum -y install epel-release; yum clean all
