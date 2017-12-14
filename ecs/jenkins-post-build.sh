@@ -1,3 +1,5 @@
+#!/bin/bash
+
 SERVICE_NAME="rest"
 #VERSION=`date +%y%m%d%H%M%S`"_"${BUILD_NUMBER}
 VERSION=${BUILD_NUMBER}
