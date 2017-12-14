@@ -4,7 +4,7 @@ VERSION=${BUILD_NUMBER}
 TASK_FAMILY="rest"
 CLUSTER="rest"
 REGION="us-east-1"
-COUNT="4"
+COUNT="2"
 
 # Create a new task definition for this build
 # Replace the build number
@@ -18,7 +18,7 @@ SERVICE_FILE="ecs/services/rest-service.json"
 sed -i "s;%DESIRED_COUNT;${COUNT};g" ecs/services/rest-service.json
 
 #Register the task definition in the repository
-#aws ecs register-task-definition --region ${REGION} --family ${TASK_FAMILY} --cli-input-json file://$TASK_FILE
+aws ecs register-task-definition --region ${REGION} --family ${TASK_FAMILY} --cli-input-json file://$TASK_FILE
 
 SERVICES=`aws ecs describe-services --services ${SERVICE_NAME} --cluster ${CLUSTER} --region ${REGION} | jq .services[].desiredCount`
 #Get latest revision
