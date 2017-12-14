@@ -4,7 +4,7 @@ VERSION=${BUILD_NUMBER}
 TASK_FAMILY="rest"
 CLUSTER="rest"
 REGION="us-east-1"
-COUNT="3"
+COUNT="2"
 
 # Create a new task definition for this build
 # Replace the build number
